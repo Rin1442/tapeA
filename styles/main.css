@@ -4,6 +4,18 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+@media(min-width:991px){
+  .display-in-mobile{
+    display: none;
+  }
+}
+
+@media(max-width:991px){
+  .display-in-desktop{
+    display: none;
+  }
+}
+
 body {
   margin: 0;
 }
@@ -76,11 +88,11 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0.9em 0;
 }
 
 mark {
-  background-color: rgb(213, 199, 230);
+  background-color: rgb(248, 248, 117);
   color: #000;
 }
 
@@ -232,7 +244,7 @@ textarea {
 }
 
 :root {
-  --background: rgb(213, 199, 230);
+  --background: #fcffe4f5;
 }
 
 html {
@@ -255,6 +267,22 @@ body {
   font-family: "Dancing Script", cursive;
   font-weight: 700;
   color: #231f20;
+}
+
+.under-tape {
+  position: absolute;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: "Homemade Apple", cursive;
+  font-weight: 800;
+  top: 100%;
+  left: 100px;
+  width: 300px;
+  height: 60px;
+  font-size: 20px;
+  color: #231f20;
+  
 }
 
 .header {
@@ -280,6 +308,7 @@ body {
   fill: #3e403e;
 }
 
+
 .play-btn[data-volume="off"] .play-icon-mute {
   display: inline-block;
 }
@@ -296,12 +325,35 @@ body {
   display: inline-block;
 }
 
+
 #player {
   display: none;
 }
 
+
+.moomoo {
+  position: absolute;
+  top: -40px;
+  height: 150px;
+  width: 150px; 
+  background-image: url("3.png");
+  background-size: 100%;
+}
+.youtube{
+  position:  relative;
+  top: -80px;
+ 
+}
+.date{
+  position: absolute;
+  font-family: "Homemade Apple", cursive;
+  font-size: 20px;
+  top: 0px;
+  left: 50px;
+}
+
 :root {
-  --progress: 20;
+  --progress: 35;
   /*percent of progress*/
   --progress-right: calc((130px * var(--progress)) / 100);
   --progress-left: calc(130px - var(--progress-right));
@@ -394,12 +446,12 @@ body {
   padding-left: 6px;
   padding-top: 10px;
   overflow: hidden;
-  background-color: red;
+  background-color: rgb(255, 123, 0);
   border-radius: 15px 15px 0 0;
   font-family: "Rowdies", cursive;
   font-size: 28px;
   color: #626663;
-  background-color: #faf1e2;
+  background-color: #faeed8;
 }
 
 .tape-header:before {
@@ -415,20 +467,31 @@ body {
 
 .tape-title {
   position: absolute;
-  top: 2px;
-  right: 180px;
+  top: 3px;
+  right: 170px;
   color: #2c303a;
   z-index: 1;
   font-family: "Homemade Apple", cursive;
   transform: rotate(0deg);
-  font-size: 28px;
+  font-size: 25px;
+}
+
+.tape-smalltitle {
+  position: absolute;
+  top: 20px;
+  left: 120px;
+  color: #2c303a;
+  z-index: 1;
+  font-family: "Homemade Apple", cursive;
+  transform: rotate(0deg);
+  font-size: 15px;
 }
 
 .tape-body {
   height: 120px;
   padding-top: 5px;
   border-radius: 0 0 15px 15px;
-  background: linear-gradient(to bottom, #9f8aca 0%, #9f8aca 99px, #9c7bdad0 100px, #9c7bdad0 100%);
+  background: linear-gradient(to bottom, #59d84b 0%, #59d84b 99px, #50ba3f 100px, #50ba3f 100%);
 }
 
 .tape-window {
@@ -497,7 +560,7 @@ body {
   margin-top: 1px;
   width: 58px;
   height: 58px;
-  border: 5px solid #85868a;
+  border: 5px solid #a2a3a7;
   border-radius: 50px;
   background-color: var(--background);
   animation: tape-spol-rotate var(--speed-spool) linear infinite;
@@ -520,7 +583,7 @@ body {
   width: 6px;
   top: -2px;
   bottom: -2px;
-  background-color:#85868a;
+  background-color: #a2a3a7;
 }
 
 .tape-spoolbar > div:nth-child(2) {
@@ -548,7 +611,7 @@ body {
   min-height: 90px;
   border-radius: 50%;
   border: 1px solid #0f0f0f;
-  background: #423834 repeating-radial-gradient(#534844, #442b28 1px, #443330 2px, #413433 3px);
+  background: #662f27 repeating-radial-gradient(#6a352d, #592922 1px, #7c3835 2px, #7c3835 3px);
   animation: tape-spol-rotate 7s linear infinite;
 }
 
@@ -684,15 +747,15 @@ body {
 }
 
 [type='range']:focus::-webkit-slider-runnable-track {
-  background:#969992;
+  background: #bcc9ab;
 }
 
 [type='range']:focus::-ms-fill-lower {
-  background: #a8aca4;
+  background: #afbf9c;
 }
 
 [type='range']:focus::-ms-fill-upper {
-  background: #969992;
+  background: #bcc9ab;
 }
 
 [type='range']::-webkit-slider-runnable-track {
@@ -701,14 +764,14 @@ body {
   transition: all .2s ease;
   width: 100%;
   box-shadow: 0 0 0 transparent, 0 0 0 rgba(13, 13, 13, 0);
-  background: #969992;
+  background: #afbf9c;
   border: 0 solid tranparent;
   border-radius: 5px;
 }
 
 [type='range']::-webkit-slider-thumb {
   box-shadow: 0 0 0 transparent, 0 0 0 rgba(13, 13, 13, 0);
-  background: #6d6e6d;
+  background: #89967a;
   border: 0 solid #eceff1;
   border-radius: 12px;
   box-sizing: border-box;
@@ -725,7 +788,7 @@ body {
   height: 6px;
   transition: all .2s ease;
   width: 100%;
-  background: #969992;
+  background: #afbf9c;
   border: 0 solid tranparent;
   border-radius: 5px;
   height: 3px;
